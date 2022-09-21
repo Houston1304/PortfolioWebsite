@@ -211,25 +211,18 @@
         <!-- Video -->
         <div class="project-container project-card" id = "video">
           <div class="photo_proj_title">VIDEO PROJECTS</div>
-          <div class="slider_2">
-            <div><iframe
-              is="x-frame-bypass" 
-              src="https://www.youtube.com/watch?v=YCTSafg3Ko0&t=11s"
-              scrolling="auto" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen 
-              name="slider_vid" ></iframe>
-            </div>
-            <span>
-                <a href="//www.youtube.com/embed/YCTSafg3Ko0?enablejsapi=1" target="slider_vid"><img src="assets/images/slider_pr2.jpg"></a>
-                <a href="//www.youtube.com/embed/lmHdYkKYmuc?enablejsapi=1" target="slider_vid"><img src="assets/images/slider_pr1.jpg"></a>
-                <a href="//www.youtube.com/embed/5_KzFdVZfFg?enablejsapi=1" target="slider_vid"><img src="assets/images/slider_pr3.jpg"></a>
-                <a href="//www.youtube.com/embed/5WNnn1-pvGk?enablejsapi=1" target="slider_vid"><img src="assets/images/slider_pr4.jpg"></a>
-                <a href="//www.youtube.com/embed/aBD_6vamUsM?enablejsapi=1" target="slider_vid"><img src="assets/images/slider_pr5.jpg"></a>
-            </span>
-        </div>
+          <div class="video_cont">
+            <video id = 'slider_video' autoplay loop controls>
+              <source src="assets/videos/video_2.mp4" type="video/mp4" >
+            </video>
+            <ul class="navigat_vid">
+              <li onclick="videoUrl('assets/videos/video_1.mp4')"><img src="/assets/images/slider_pr1.jpg"></li>
+              <li onclick="videoUrl('assets/videos/video_2.mp4')"><img src="/assets/images/slider_pr2.jpg"></li>
+              <li onclick="videoUrl('assets/videos/video_3.mp4')"><img src="/assets/images/slider_pr3.jpg"></li>
+              <li onclick="videoUrl('assets/videos/video_4.mp4')"><img src="/assets/images/slider_pr4.jpg"></li>
+              <li onclick="videoUrl('assets/videos/video_5.mp4')"><img src="/assets/images/slider_pr5.jpg"></li>
+            </ul>
+          </div>
         </div>
 
       </div>
@@ -238,54 +231,59 @@
     <!-- Contact section -->
     <section class="contact" id="contact">
       <div class = "body_cont">
-        <div class = "projects-title">LET'S GET <br> IN CONTACT</div>
+        <div class="cont_links">
+          <div class = "projects-title _footer">LET'S GET <br> IN CONTACT</div>
+          <div class="links">
+            <div class="inst" id = 'link'><a href="https://instagram.com/d_ch15a?igshid=MTA0ZTI1NzA=" class="link-url">
+              <img src="/assets/icons/inst.png" alt=""/>
+            </a></div>
+            <div class="vk" id = 'link'><a href="https://vk.com/dimach_025" class="link-url">
+              <img src="/assets/icons/vk.png" alt=""/>
+            </a></div>
+            <div class="gith" id = 'link'><a href="https://github.com/DimaPure" class="link-url">
+              <img src="/assets/icons/github.png" alt="" style = "width: 47px;"/>
+            </a></div>
+          </div>
+        </div>
         <!-- Форма -->
         <script src = "mainapp/js/validate_form.js"></script>
         <div class = "form1">
+            <div class="hi_sec">
+              <div class="hi">JUST SAY HI</div>
+              <img class = "hi_icon" src="/assets/icons/hi.png" alt=""/>
+            </div>
             <form action = '#' class = "form_ab" id = 'form' method = 'post'>
-
+              <div class="sec-cont"> 
                 <!-- Имя -->
-              <div class = "name_ab data">
-                  <input tabindex = "1" placeholder = "Name*" class = "form_input _name _req" type="text" name="name-ms" id = "form" required value = ""/>
+                <div class = "name_ab data">
+                    <input tabindex = "1" placeholder = "Name*" class = "form_input _name _req" type="text" name="name-ms" id = "form" required value = ""/>
+                </div>
+                <br>
+                  <!-- Мыло -->
+                <div class = "email_ab data">
+                    <input tabindex = "2" placeholder = "Email*" class = "form_input _email _req" type="email" name="email-ms" required value = ""/>
+                </div>
+                <br>
               </div>
-              <br>
-                <!-- Мыло -->
-              <div class = "email_ab data">
-                  <input tabindex = "2" placeholder = "Email*" class = "form_input _email _req" type="email" name="email-ms" required value = ""/>
-              </div>
-              <br>
-                <!-- Объект -->
-              <div class = "subject_ab data">
-                  <input tabindex = "3" class = "form_input _subject _req" placeholder = "Subject*" type="text" name="subject-ms" required value = ""/>
-              </div>
-              <br>
                 <!-- Текст -->
-              <div class = "text_ab">
+              <div class = "text_ab data">
                 <textarea tabindex = "4" class = "form_input _text _req" placeholder = "Text*" name="text-ms" cols = "30" rows = "10" required></textarea>
               </div>
               <br>
                 <!-- Кнопки -->
               <div class = "buttons">
+                <a class = "go_home" href = "#about"><img src="/assets/images/home.png" class = "hom"></a>
                   <div class = "button2">
-                    <button class = "big_bt" type = "reset">Сlear</button>
+                    <button class = "big_bt" type = "reset">FORGET</button>
                   </div>
                   <div class = "button1">
-                    <button class = "big_bt" type = "submit">Send</button>
+                    <button class = "big_bt" type = "submit">SEND</button>
                   </div>
                 </div>
             </form>
         </div>
-        <div class="links">
-          <div class="inst" id = 'link'><img src="" alt=""/></div>
-          <div class="vk" id = 'link'><img src="" alt=""/></div>
-          <div class="gith" id = 'link'><img src="" alt=""/></div>
-          <a class = "go_home" href = "#about"><img src="/assets/images/home.png" class = "hom"></a>
-        </div>
-    </div>
-      
+      </div>
     </section>
-    
-
     <!-- Social accounts - Fixed to the right -->
 
     <!-- Scroll to top -->

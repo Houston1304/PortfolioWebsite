@@ -1,3 +1,4 @@
+// Slider engine
 $(document).ready(function(){
     $('.my_slider').slick({
       arrow:true,
@@ -32,3 +33,7 @@ $(document).ready(function(){
       initialSlide: 2
     });
   });
+// Video slider engine
+function videoUrl(x){
+  document.getElementById('slider_video').src = x;
+}
