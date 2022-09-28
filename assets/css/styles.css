@@ -88,6 +88,16 @@ nav {
   padding: 1.5rem 3.5rem;
   background-color: var(--primary-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  visibility: visible;
+}
+.flex_icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#men.close{
+  visibility: hidden;
 }
 
 nav h1 {
@@ -123,14 +133,16 @@ nav ul li {
 
 /* Hero --------------------------------------------------------------------------------------------------------------------------------------------*/
 .hero {
+  /* margin-top: 2.5rem; */
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   max-width: auto;
   gap: 2.5rem;
   background:linear-gradient(90deg, #000000 40%,#ff7f35);
-  padding:2% 1% 1% 1%;
   font-size: 25px;
 }
 .bio{
@@ -142,6 +154,7 @@ nav ul li {
 .bio-text{
   max-width: 750px;
   text-align: justify;
+  font-size: 26px;
 }
 .avatar {
   width:520px;
@@ -169,19 +182,26 @@ nav ul li {
 
 /* Skills ------------------------------------------------------------------------------------------------------------------------------------------*/
 .skills{
+  width: 100%;
+  height: 100vh;
   max-width: 68.75rem;
   margin: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .skill-header {
   margin-bottom: 1rem;
+  font-size: 35px;
 }
 .skills-wrapper img {
   padding: 1.25rem;
 }
 .icon {
-  width: 11.875rem;
-  height: 11.25rem;
+  width: 18.875rem;
+  height: 18.25rem;
 }
 .icon-card {
   background-color: #fff;
@@ -193,27 +213,28 @@ nav ul li {
 
 /* Projects --------------------------------------------------------------------------------------------------------------------------------------*/
 .projects{
-  margin-top: 2.5rem;
+  margin-top: 7.5rem;
+  height: 100vh;
+}
+.container_centr_for_navpr{
+  height: 100vh;
 }
 .projects-title-container{
-  height: 40rem;
+  height: 60vh;
   background-image: url(../images/proj_avat.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  line-height: 640px;
+  line-height: 562.2px;
   text-align: center;
+  box-shadow: 0 0 30px 40px black;
 }
 .projects-title{
   font-family: 'Faster One', cursive;
-  text-align: center;
   font-size: 100px;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
 }
 .navig-progect{
-  height: 480px;
+  height: auto;
 }
 .nav-progect{
 width: 100%;
@@ -235,7 +256,7 @@ justify-content: center;
 .nav-ph, .nav-pr, .nav-vd {
   background-position: center;
   background-size: cover;
-  height: 480px;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +264,7 @@ justify-content: center;
 }
 .sl-title{
   color:var(--bg-color);
-  font-size: 22px;
+  font-size: 25px;
   transition: var(--transition);
   font-weight: normal;
 }
@@ -254,22 +275,24 @@ h3:hover{
 }
 
 /* Sliders */
-.projects-container{
-  margin-top:2.5rem;
-  margin-bottom: 2.5rem;
-}
 .photo_proj_title{
-  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
-  font-size: 22px;
+  font-size: 30px;
+  padding: 10px;
   font-family: 'Contrail One', cursive;
+  position: relative;
+  padding-left: 100px;
+}
+#vid.photo_proj_title{
+  padding-left: 0px;
 }
 #main_pr{
   font-weight:lighter;
+
 }
 .slider_photo_size{
-  width: 400px;
+  width: 300px;
   height: auto;
 }
 /* Слайдер -------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -280,94 +303,97 @@ h3:hover{
   display: flex;
   align-items: flex-start;
 }
-
-/* Sliders for photo and programming*/
-/* Photo */
-.my_slider{
+/* Slider POPUPS ------------------------------------------------------------------------------------------------------------------------------- */
+.popup{
+  width: 100%;
+  height: 1000px;
+  background-color: #161616ad;
+  background-image: url(/assets/images/graph.jpg);
+  background-size: cover;
+  background-position:center;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0.8;
+  display: none;
+  transition: all 0.8s ease 4s;
+}
+.popup.open{
+  display:block;
   position: relative;
-  height: 450px;
-} 
-.my_slider .slider_item{
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.8s ease 4s;;
+}
+.popup_body{
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup_close{
   display: flex;
   justify-content: center;
-  padding-top: 60px;
+  width: 30px;
+  font-size: 25px;
+  padding: 10px;
+  color: #fcfcfc;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  padding-right: 100px;
+}
+#vid2.popup_close{
+  padding-right: 0px;
+}
+.popup_title{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Sliders for photo and programming*/
+/* Photo ---------------------------------------------------------------------------------------------------------------------------------------*/
+.my_slider, .slider_for_pr{
+  position: relative;
+  height: 600px;
+  width: 1920px;
+} 
+.my_slider img, .slider_for_pr img, .slick-center img{
+  border: 2px rgba(255, 255, 255, 0.856) solid;
+  border-radius: 4px;
+} 
+.my_slider .slider_item, .slider_for_pr .sliderPr_item{
+  display: flex;
+  justify-content: center;
+  padding-top: 180px;
   opacity: 0.4;
   transition: all 0.3s ease 0s;
+}
+.slider_for_pr .sliderPr_item{
+  padding-top: 135px;
 }
 
 .slider_item.slick-center{
   padding: 0;
   opacity: 1;
 }
-.slick-center img{
-  transition: all 0.3s ease 0s;
-  width: 600px;
-}
-.my_slider .slick-arrow{
-  position: absolute;
-  top: 50%;
-  margin: -50px 0px 0px 0px;
-  z-index: 10;
-  font-size: 0;
-  width: 50px;
-  height: 90px;
-  border: none;
-}
-.my_slider .slick-arrow.slick-prev{
-  left: 160px;
-  background: url('../images/prev.png') 0 0 / 100% no-repeat;
-}
-.my_slider .slick-arrow.slick-next{
-  right: 160px;
-  background: url('../images/next.png') 0 0 / 100% no-repeat;
-}
-.my_slider .slick-arrow.slick-disabled{
-  opacity: 0.2;
-}
-.my_slider .slick-dots{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-}
-.my_slider .slick-dots li{
-  list-style: none;
-}
-.my_slider .slick-dots button{
-  font-size: 0;
-  width: 15px;
-  height: 15px;
-  margin: 0px 10px;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.my_slider .slick-dots li.slick-active button{
-  background-color: transparent;
-  border: 1px solid #fff;
-}
-
-/* Proga */
-.slider_for_pr{
-  position: relative;
-  height: 450px;
-} 
-.slider_for_pr .sliderPr_item{
-  display: flex;
-  justify-content: center;
-  padding-top: 60px;
-  opacity: 0.4;
-  transition: all 0.3s ease 0s;
-}
-
 .sliderPr_item.slick-center{
   padding: 0;
   opacity: 1;
 }
+
+.sliderPr_item.slick-center img{
+  width: 800px;
+}
+.slider_item.slick-center img{
+  width: 800px;
+}
 .slick-center img{
   transition: all 0.3s ease 0s;
-  width: 600px;
 }
-.slider_for_pr .slick-arrow{
+.my_slider .slick-arrow, .slider_for_pr .slick-arrow{
   position: absolute;
   top: 50%;
   margin: -50px 0px 0px 0px;
@@ -377,48 +403,27 @@ h3:hover{
   height: 90px;
   border: none;
 }
-.slider_for_pr .slick-arrow.slick-prev{
-  left: 160px;
+.slider_for_pr .slick-arrow{
+  margin: -108px 0px 0px 0px;
+}
+.my_slider .slick-arrow.slick-prev, .slider_for_pr .slick-arrow.slick-prev{
+  left: 80px;
   background: url('../images/prev.png') 0 0 / 100% no-repeat;
 }
-.slider_for_pr .slick-arrow.slick-next{
-  right: 160px;
+.my_slider .slick-arrow.slick-next, .slider_for_pr .slick-arrow.slick-next{
+  right: 80px;
   background: url('../images/next.png') 0 0 / 100% no-repeat;
 }
-.slider_for_pr .slick-arrow.slick-disabled{
+.my_slider .slick-arrow.slick-disabled, .slider_for_pr .slick-arrow.slick-disabled{
   opacity: 0.2;
 }
-.slider_for_pr .slick-dots{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-}
-.slider_for_pr .slick-dots li{
-  list-style: none;
-}
-.slider_for_pr .slick-dots button{
-  font-size: 0;
-  width: 15px;
-  height: 15px;
-  margin: 0px 10px;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.slider_for_pr .slick-dots li.slick-active button{
-  background-color: transparent;
-  border: 1px solid #fff;
-}
-/* #proga{
-  margin-top: 2.5rem;
-} */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
 
-
-/* Slider for video */
-#video{
+/* Slider for video -------------------------------------------------------------------------------------------------------------------------*/
+#video_popup_title{
   position: relative;
-  width: 100%;
-  height: auto;
+  padding-right: 0px;
+  top: 33px;
 }
 .video_cont{
   display: flex;
@@ -431,7 +436,7 @@ h3:hover{
 }
 .navigat_vid{
   position:absolute;
-  bottom: 40px;
+  bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -462,6 +467,7 @@ h3:hover{
   width: 120px;
   height: auto;
 }
+/* --------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* Contact-------------------------------------------------------------------------------------------------------------------------------------------- */
 .contact{
@@ -482,8 +488,11 @@ h3:hover{
   padding: 0 20px 0 20px;
   margin-bottom: 20px;
 }
-.projects-title._footer{
+.footer{
   margin-bottom: 20px;
+  font-family: 'Faster One', cursive;
+  font-size: 100px;
+  text-align: center;
 }
 .body_cont{
   display: flex;
@@ -536,11 +545,11 @@ form{
   margin-right: 10px;
 }
 .form_input._name, .form_input._email{
-  height: 45px;
+  height: 35px;
 }
 .form_input._text{
   width: 650px;
-  height: 200px;
+  height: 150px;
 }
 .text_ab{
   display: flex;
