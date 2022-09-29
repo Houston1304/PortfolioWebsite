@@ -1,5 +1,28 @@
-// Anchors
+// Transition 2
+window.onload = () => {
+    // Получение элементов нажатия
+    const but3 = document.getElementById("away");
 
+    // Получение ссылок
+    const anchor3 = document.getElementById("get_hrefInAbout");
+    const transition_el = document.querySelector('.transition');
+  
+    setTimeout(() => {
+      transition_el.classList.remove('is-active');
+    }, 400);
+
+    but3.addEventListener('click', e => {
+        e.preventDefault();
+        console.log(anchor3.href)
+
+        transition_el.classList.add('is-active');
+
+        setInterval(() => {
+            window.location.href = anchor3.href;
+        }, 400);
+        console.log(anchor3.href)
+    })
+}
 
 // Slider engine
 $(document).ready(function(){
@@ -66,7 +89,6 @@ $(document).ready(function(){
 
     function popupOpen(curentPopup,popupName){
         const navHid = document.getElementById('men');
-        console.log(navHid);
         if(curentPopup){
             curentPopup.classList.add('open');
             if(popupName == 'popup_ph'){
@@ -86,7 +108,7 @@ $(document).ready(function(){
             }
             window.setTimeout(function() {
                 navHid.classList.add('close');
-              }, 600);
+              }, 100);
             $("body").css("overflow", "hidden");
         }
     }
@@ -121,6 +143,7 @@ playBtn.addEventListener('click', function () {
         videoEl.play();
     }
 }, false);
+
 pauseBtn.addEventListener('click', function () {
     videoEl.pause();
 }, false);

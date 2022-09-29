@@ -17,6 +17,8 @@
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
   --transition: 0.3s;
+  --animate-duration: 5s;
+  --animate-delay: 5s;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color:    rgb(255, 255, 255);
@@ -88,7 +90,9 @@ nav {
   padding: 1.5rem 3.5rem;
   background-color: var(--primary-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
   visibility: visible;
+  transition: all 0.1s ease 1s;
 }
 .flex_icon{
   display: flex;
@@ -97,7 +101,9 @@ nav {
   flex-direction: row;
 }
 #men.close{
+  opacity: 0;
   visibility: hidden;
+  transition: all 0.1s ease 1s;
 }
 
 nav h1 {
@@ -584,4 +590,21 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Transition */
+.transition-1{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  z-index: 101;
+  background: #1e1e1e;
+  pointer-events: none;
+  transition: 0.5s ease-out;
+}
+.transition-1.is-active{
+  bottom: 0;
+  pointer-events: all;
 }

@@ -128,9 +128,31 @@ body {
   width: 400px;
   height: 400px;
   border: 4px rgba(0, 0, 0, 0.2) solid;
+  transition: var(--transition);
+}
+.main_avat:hover{
+  transition: var(--transition);
+  scale: 1.05;
 }
 .main_avat_title{
   padding: 20px;
   font-family: 'Faster One', cursive;
   font-size: 45px;
+}
+
+/* Transition */
+.transition-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  z-index: 101;
+  background: #1e1e1e;
+  pointer-events: none;
+  transition: 0.5s ease-out;
+}
+.transition-1.is-active{
+  right: 0;
+  pointer-events: all;
 }
