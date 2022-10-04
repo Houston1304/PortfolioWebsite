@@ -60,11 +60,12 @@ $(document).ready(function(){
     });
   });
   
-// Popups engine
-  document.addEventListener("DOMContentLoaded", () => {
+// Popups engine and anhors
+document.addEventListener("DOMContentLoaded", () => {
     const popupLinks = document.querySelectorAll('.popup-link');
 
-    if(popupLinks.length>0){
+    //Popups eng func-----------------------------------------------------------
+    if(popupLinks.length > 0){
         for(let index = 0; index < popupLinks.length; index++){
             const popupLink = popupLinks[index];
             popupLink.addEventListener("click", function(e){
@@ -75,7 +76,30 @@ $(document).ready(function(){
             });
         }
     }
+    // ---------------------------------------------------------------------------
 
+    // Anchors -------------------------------------------------------------------
+    const anchors = document.querySelectorAll('.nav-link');
+
+    if(anchors.length > 0){
+        for(let index = 0; index < anchors.length; index++){
+            const anchor = anchors[index];
+            anchor.addEventListener("click", function(e){
+                const hrefName = anchor.getAttribute('href').replace('#', '');
+                const curentHref = document.getElementById(hrefName);
+                handleButtonClick(curentHref);
+                e.preventDefault();
+            });
+        }
+    }    
+    
+
+    function handleButtonClick(hiddenElement) {
+        hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
+    }
+    // ----------------------------------------------------------------------------
+    
+    // Popap func------------------------------------------------------------------
     const popupCloseIcon = document.querySelectorAll('.close-popup');
     if(popupCloseIcon.length > 0){
         for(let index = 0; index<popupCloseIcon.length; index++){
@@ -125,6 +149,7 @@ $(document).ready(function(){
         $("body").css("overflow", "scroll");
         $("body").css("overflow-x", "hidden");
     }
+    //----------------------------------------------------------------------------
 });
 
 // Video slider engine

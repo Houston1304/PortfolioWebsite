@@ -42,7 +42,7 @@
             alt="ic"/>
           </a>
           <ul class="navigation">
-            <li><a href="#about" class="nav-link" id = "anchor1">ABOUT</a></li>
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
             <li><a href="#skills" class="nav-link">SKILLS</a></li>
             <li><a href="#projects" class="nav-link">PROJECTS</a></li>
             <li><a href="#contact" class="nav-link">CONTACT</a></li>
@@ -69,7 +69,7 @@
             <br>
             If you are interested in my work or if you like to collaborate or just say hello, feel free to contact me
           </p>
-          <a href="#contact" class="to-cont"></a>
+          <a href="#contact" class="to-cont nav-link"></a>
         </div>
       </section>
 
@@ -284,28 +284,27 @@
             </div>
           </div>
           <!-- Форма -->
-          <script src = "mainapp/js/...js"></script>
-          <div class = "form1">
+          <div class = "form_area">
               <div class="hi_sec">
                 <div class="hi">JUST SAY HI</div>
                 <img class = "hi_icon" src="/assets/icons/hi.png" alt=""/>
               </div>
-              <form action = '#' class = "form_ab" id = 'form' method = 'post'>
+              <form action = '#' class = "form_ab" id = 'form'>
                 <div class="sec-cont"> 
                   <!-- Имя -->
                   <div class = "name_ab data">
-                      <input tabindex = "1" placeholder = "Name*" class = "form_input _name _req" type="text" name="name-ms" id = "form" required value = ""/>
+                      <input tabindex = "1" placeholder = "Name*" class = "form_input _name _req" type="text" name="name" />
                   </div>
                   <br>
                     <!-- Мыло -->
                   <div class = "email_ab data">
-                      <input tabindex = "2" placeholder = "Email*" class = "form_input _email _req" type="email" name="email-ms" required value = ""/>
+                      <input tabindex = "2" placeholder = "Email*" class = "form_input _email _req" type="text" name="email" />
                   </div>
                   <br>
                 </div>
                   <!-- Текст -->
                 <div class = "text_ab data">
-                  <textarea tabindex = "4" class = "form_input _text _req" placeholder = "Text*" name="text-ms" cols = "30" rows = "10" required></textarea>
+                  <textarea tabindex = "3" class = "form_input _text _req" placeholder = "Text*" name="text" cols = "30" rows = "10"></textarea>
                 </div>
                 <br>
                   <!-- Кнопки -->
@@ -330,7 +329,7 @@
         <!-- ------------------------- -->
       <script src="assets/js/main.js"></script>
       <script src="assets/js/wow.min.js"></script>
-      <script src="js/wow.min.js"></script>
+      <script src="/assets/js/send_mail.js"></script>
       <script>
         new WOW().init();
       </script>
