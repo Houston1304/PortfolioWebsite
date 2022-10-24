@@ -483,8 +483,48 @@ h3:hover{
   margin: auto;
   padding: 1.5rem 3.5rem;
   background-color: #161616dc;
+  position: relative;
+  display: block;
+  transition: 0.5s ease 2s;
   /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
 }
+.contact._close{
+  display: none;
+} 
+.contact::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(72, 72, 72, 0.617) url('/assets/images/loading3.gif') center /50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease 0s;
+}
+.contact._sending::after{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+input, textarea{
+  color: #fcfcfc;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.form_input._error{
+  border: 2px red solid;
+}
+
 .links{
   display: flex;
   align-items: center;
@@ -504,7 +544,8 @@ h3:hover{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 1800px;
+  width: 100%;
+  height: 100%;
   padding: 10px;
   margin: 0;
 }
@@ -607,40 +648,4 @@ form{
 .transition-1.is-active{
   bottom: 0;
   pointer-events: all;
-}
-/* Form */
-input, textarea{
-  color: #fcfcfc;
-  font-size: 15px;
-}
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-
-.form_input._error{
-  border: 2px red solid;
-}
-
-.contact{
-  position: relative;
-}
-
-.contact::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(72, 72, 72, 0.617) url('/assets/images/loading3.gif') center /50px no-repeat;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s ease 0s;
-}
-.contact._sending::after{
-  opacity: 1;
-  visibility: visible;
 }

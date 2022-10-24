@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function popupOpen(curentPopup,popupName){
         const navHid = document.getElementById('men');
+        const contHid = document.getElementById('contact');
         if(curentPopup){
             curentPopup.classList.add('open');
             if(popupName == 'popup_ph'){
@@ -132,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             window.setTimeout(function() {
                 navHid.classList.add('close');
+                contHid.classList.add('_close');
               }, 100);
             $("body").css("overflow", "hidden");
         }
@@ -139,8 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function popupClose(popupActive){
         const navHid = document.getElementById('men');
+        const contHid = document.getElementById('contact');
         window.setTimeout(function() {
             navHid.classList.remove('close');
+            contHid.classList.remove('_close');
             popupActive.classList.remove('open');
           }, 600);
         $("html, body").animate({
