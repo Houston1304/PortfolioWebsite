@@ -27,7 +27,7 @@
     }
 
     if(!$mail->send()){
-        $message = "Ошибка";
+        $message = "Ошибка в php";
     } else{
         $message = 'Данные отправлены!';
     }
