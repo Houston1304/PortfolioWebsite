@@ -79,7 +79,7 @@ body {
 
 /* Main section */
 .main{
-  background-image: url("assets/images/avatar_main.jpg");
+  background-image: url("/assets/images/avatar_main.jpg");
   background-size: cover;
   background-position:center;
   width: 100%;
@@ -121,7 +121,7 @@ body {
 
 }
 .main_avat{
-  background-image: url("assets/images/main_ph.jpg");
+  background-image: url("/assets/images/main_ph.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 100%;
